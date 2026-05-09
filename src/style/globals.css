@@ -1,0 +1,121 @@
+/* src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  * {
+    @apply border-surface-border;
+  }
+  
+  body {
+    @apply bg-surface-dark text-white font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-2xl;
+  }
+  
+  .glass-hover {
+    @apply hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300;
+  }
+  
+  .glass-card {
+    @apply glass glass-hover p-6;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 via-accent-pink to-accent-cyan bg-clip-text text-transparent;
+  }
+  
+  .gradient-text-purple {
+    @apply bg-gradient-to-r from-brand-400 to-accent-violet bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    @apply relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-500 to-accent-pink -z-10;
+  }
+  
+  .gradient-border::after {
+    content: '';
+    @apply absolute inset-[1px] rounded-2xl bg-surface-dark -z-10;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-600 to-accent-pink hover:from-brand-700 hover:to-accent-pink/90 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply border border-white/10 text-white font-semibold py-3 px-6 rounded-xl hover:bg-white/5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-ghost {
+    @apply text-gray-400 font-medium py-3 px-6 rounded-xl hover:text-white hover:bg-white/5 transition-all duration-300;
+  }
+  
+  .input-primary {
+    @apply w-full bg-white/[0.03] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all duration-300;
+  }
+  
+  .textarea-primary {
+    @apply input-primary resize-none;
+  }
+  
+  .select-primary {
+    @apply input-primary appearance-none cursor-pointer;
+  }
+  
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-purple {
+    @apply badge bg-brand-500/10 text-brand-400 border border-brand-500/20;
+  }
+  
+  .badge-pink {
+    @apply badge bg-accent-pink/10 text-accent-pink border border-accent-pink/20;
+  }
+  
+  .badge-cyan {
+    @apply badge bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20;
+  }
+}
+
+/* Scrollbar Styles */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #27272a transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #27272a;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: #3f3f46;
+  }
+}
