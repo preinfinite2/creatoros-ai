@@ -1,0 +1,10 @@
+// src/components/common/index.js (Common components barrel export)
+export { default as LoadingSpinner } from './LoadingSpinner'
+export { default as EmptyState } from './EmptyState'
+export { default as CopyButton } from './CopyButton'
+export { default as Modal } from './Modal'
+export { default as ConfirmDialog } from './ConfirmDialog'
+export { default as ErrorBoundary } from './ErrorBoundary'
+export { default as Tooltip } from './Tooltip'
+export { default as Badge } from './Badge'
+export { default as Skeleton, CardSkeleton, ListSkeleton, DashboardSkeleton } from './Skeleton'
