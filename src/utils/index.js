@@ -1,0 +1,10 @@
+// src/utils/index.js (Barrel export file)
+export { formatDate, truncateText, capitalizeFirst, generateId, classNames } from './formatters'
+export { validateEmail, validatePassword, validateRequired } from './validators'
+export { APP_NAME, ROUTES, TOOL_TYPES, PLATFORMS, TONES, STORAGE_KEYS, ERROR_MESSAGES, SUCCESS_MESSAGES } from './constants'
+export { analytics } from './analytics'
+export { exportAsJSON, exportAsCSV, exportAsText, exportProject, exportAllProjects } from './exportUtils'
+export { debounce, throttle } from './debounce'
+export { errorHandler } from './errorHandler'
+export { storage } from './storage'
+export { perfMonitor } from './performance'
